@@ -2,6 +2,8 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 
+app.use(express.json())
+
 // DATABASE
 const connectDatabase = require('./db')
 connectDatabase()
@@ -11,11 +13,17 @@ const authRoutes = require('./routes/auth')
 const adminRoutes = require('./routes/admin')
 const userRoutes = require('./routes/user')
 
+const Product = require('./models/product')
+
 app.use('/', authRoutes)
-app.use('/api/products', (req, res) => {
-    res.json({
-        response: "View all products"
-    })
+app.use('/api/products', async (req, res) => {
+    try {
+        const products = await Product.find()
+        res.json(products)
+    }catch(error){
+        console.log("error fetching products -> ", error.message)
+        res.status(500).json({message: error.message})
+    }
 } )
 app.use('/api/admin', adminRoutes)
 app.use('/api/user', userRoutes)
