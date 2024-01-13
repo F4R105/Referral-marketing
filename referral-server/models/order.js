@@ -6,12 +6,12 @@ const orderSchema = new mongoose.Schema({
         ref: "User"
     },
     total_amount: {
-        type: Number,
+        type: Number, /* total price of every items on a cart */
         required: true
     },
     payment_status: {
         type: String,
-        enum: [pending, completed, failed],
+        enum: ["pending", "completed", "failed"],
         default: "pending",
         required: true
     }

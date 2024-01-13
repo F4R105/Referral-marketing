@@ -1,6 +1,10 @@
 const { Router } = require('express')
 const router = Router()
 
+// MODELS
+const Referral = require('../models/referral')
+const Order = require('../models/order')
+
 router.get('/referrals', (req, res)=>{
     res.json({response: "View user's referral history"})
 })

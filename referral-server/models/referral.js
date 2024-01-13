@@ -13,7 +13,7 @@ const referralSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: [pending, completed, expired],
+        enum: ["pending", "completed", "expired"],
         required: true,
         default: "pending"
     },
