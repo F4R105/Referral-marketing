@@ -1,20 +1,16 @@
 const { Router } = require('express')
 const router = Router()
 
-router.get('/referrals', (req, res)=>{
-    res.json({response: "view all referrals"})
-})
+// CONTROLLER
+const referralController = require('../controllers/referralController')
+const productController = require('../controllers/productController')
 
-router.post('/referrals', (req, res)=>{
-    res.json({response: "add new referral"})
-})
+router.get('/referrals', referralController.getAllReferrals)
 
-router.put('/referrals', (req, res) => {
-    res.json({response: "update referral"})
-})
+router.post('/referrals', referralController.addNewReferral)
 
-router.post('/products', (req, res) => {
-    res.json({response: "add new product"}) 
-})
+router.put('/referrals', referralController.updateReferral)
+
+router.post('/products', productController.addNewProduct)
 
 module.exports = router
