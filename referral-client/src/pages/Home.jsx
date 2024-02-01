@@ -7,7 +7,7 @@ const Home = () => {
       <section id="hero">
         <div className="container">
           <h1>Welcome to referral program</h1>
-          <a href="#products">Start shopping</a>
+          <a className="button" href="#products">Start shopping</a>
         </div>
       </section>
       <section id="products">

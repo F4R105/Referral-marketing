@@ -1,0 +1,15 @@
+.product {
+
+    .product-image {
+        width: 100%;
+        aspect-ratio: 1;
+        background-color: rgb(76, 76, 76);
+
+        display: grid;
+        place-items: center;
+    }
+
+    .product-name {
+        font-weight: bold;
+    }
+}

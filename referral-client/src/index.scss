@@ -1,1 +1,9 @@
-@import "./styles/root"
+@import "./styles/root";
+
+// components
+@import "./styles/header";
+@import "./styles/product";
+@import "./styles/footer";
+
+// pages
+@import "./styles/home";

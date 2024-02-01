@@ -1,0 +1,26 @@
+section#hero {
+    background-color: black;
+    
+    .container {
+        min-height: 80vh;
+        display: flex;
+        gap: 1em;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        // background-image: url("/public/hero\ image.png");
+        // background-position: right;
+        // background-repeat: no-repeat;
+        // background-size: cover;
+    }
+}
+
+section#products {
+    background-color: gray;
+    
+    .container {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
